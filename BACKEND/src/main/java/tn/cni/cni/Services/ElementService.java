@@ -15,4 +15,6 @@ public interface ElementService {
     public List<Element> getAll();
 
     public Element findById( int id);
+
+    Element addFormation(Element element);
 }

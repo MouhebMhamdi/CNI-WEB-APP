@@ -11,7 +11,8 @@ import java.util.List;
 @RequestMapping("/api/Formation")
 public class FormationController {
 
-    private FormationService FormationService;
+    @Autowired
+    private FormationService formationService;
 
 
     @PostMapping("/add")

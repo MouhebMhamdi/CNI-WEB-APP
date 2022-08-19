@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
+
 
 import javax.persistence.*;
 
@@ -52,19 +51,10 @@ public class Formation {
 
 
     @ManyToMany
-
-    @JoinTable(
-            name = "cours",
-            joinColumns = @JoinColumn(name = "id"),
-            inverseJoinColumns = @JoinColumn(name = "id")) // id_cours
-    Set<Cour> cours;
+    private Set<Cour> cours;
 
     @ManyToMany
-    @JoinTable(
-            name = "users",
-            joinColumns = @JoinColumn(name = "id"),
-            inverseJoinColumns = @JoinColumn(name = "id")) //id_users
-    Set<User> users;
+    private Set<User> users;
 
 
 

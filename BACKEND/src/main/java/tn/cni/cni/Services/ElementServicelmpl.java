@@ -30,4 +30,9 @@ public class ElementServicelmpl implements ElementService {
     public Element findById(int id) {
         return null;
     }
+
+    @Override
+    public Element addFormation(Element element) {
+        return null;
+    }
 }

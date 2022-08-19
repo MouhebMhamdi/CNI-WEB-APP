@@ -1,5 +1,6 @@
 package tn.cni.cni.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.cni.cni.Entities.Element;
 import tn.cni.cni.Entities.Formation;
@@ -10,7 +11,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/Element")
 public class ElementController {
-    //private ElementService ElementService;
+    @Autowired
+   private ElementService elementService;
 
 
     @PostMapping("/add")
