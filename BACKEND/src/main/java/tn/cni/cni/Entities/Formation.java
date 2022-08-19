@@ -18,11 +18,11 @@ import java.util.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document("Formation")
+
 public class Formation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private int id;
     private String idParticipant;
 
     private String idFormateur;
@@ -51,12 +51,24 @@ public class Formation {
 
 
 
-    @DBRef
-    private List<Quiz>  quizzes = new ArrayList<>();
+    @ManyToMany
 
-    @DBRef
+    @JoinTable(
+            name = "cours",
+            joinColumns = @JoinColumn(name = "id"),
+            inverseJoinColumns = @JoinColumn(name = "id")) // id_cours
+    Set<Cour> cours;
 
-    private List<Cour> cours = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(
+            name = "users",
+            joinColumns = @JoinColumn(name = "id"),
+            inverseJoinColumns = @JoinColumn(name = "id")) //id_users
+    Set<User> users;
+
+
+
+
 
 
 }

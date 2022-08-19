@@ -32,12 +32,12 @@ public class FormationController {
 
     @DeleteMapping("/delete/{id}")
 
-    public void deleteFormation(@PathVariable Long id) {
+    public void deleteFormation(@PathVariable int id) {
         formationService.deleteFormation(id);
     }
 
     @GetMapping("/get/{id}")
-    public Formation findById(@PathVariable Long id) {
+    public Formation findById(@PathVariable int id) {
         return formationService.findById(id);
     }
 }

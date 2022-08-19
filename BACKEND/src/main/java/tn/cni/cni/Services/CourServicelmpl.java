@@ -1,9 +1,10 @@
 package tn.cni.cni.Services;
 
+import org.springframework.stereotype.Service;
 import tn.cni.cni.Entities.Cour;
 
 import java.util.List;
-
+@Service
 public class CourServicelmpl implements CourService{
     @Override
     public Cour addCour(Cour cour) {
@@ -21,12 +22,12 @@ public class CourServicelmpl implements CourService{
     }
 
     @Override
-    public void deleteCour(Long id) {
+    public void deleteCour(int id) {
 
     }
 
     @Override
-    public Cour findById(String id) {
+    public Cour findById(int id) {
         return null;
     }
 }

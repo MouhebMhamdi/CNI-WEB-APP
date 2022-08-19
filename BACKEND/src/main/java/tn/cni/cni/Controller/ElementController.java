@@ -31,12 +31,12 @@ public class ElementController {
 
     @DeleteMapping("/delete/{id}")
 
-    public void deleteElement(@PathVariable Long id) {
+    public void deleteElement(@PathVariable int id) {
         elementService.deleteElement(id);
     }
 
     @GetMapping("/get/{id}")
-    public Element findById(@PathVariable Long id) {
+    public Element findById(@PathVariable int id) {
         return elementService.findById(id);
     }
 

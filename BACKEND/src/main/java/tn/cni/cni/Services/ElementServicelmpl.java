@@ -1,9 +1,10 @@
 package tn.cni.cni.Services;
 
+import org.springframework.stereotype.Service;
 import tn.cni.cni.Entities.Element;
 
 import java.util.List;
-
+@Service
 public class ElementServicelmpl implements ElementService {
     @Override
     public Element addElement(Element element) {
@@ -16,7 +17,7 @@ public class ElementServicelmpl implements ElementService {
     }
 
     @Override
-    public void deleteElement(Long id) {
+    public void deleteElement(int id) {
 
     }
 
@@ -26,7 +27,7 @@ public class ElementServicelmpl implements ElementService {
     }
 
     @Override
-    public Element findById(Long id) {
+    public Element findById(int id) {
         return null;
     }
 }

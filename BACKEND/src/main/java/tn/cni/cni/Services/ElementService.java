@@ -10,9 +10,9 @@ public interface ElementService {
 
     public Element updateElement(Element element);
 
-    public void deleteElement(Long id);
+    public void deleteElement(int id);
 
     public List<Element> getAll();
 
-    public Element findById( Long id);
+    public Element findById( int id);
 }

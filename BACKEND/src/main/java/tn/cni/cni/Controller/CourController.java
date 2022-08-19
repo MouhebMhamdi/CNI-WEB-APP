@@ -30,12 +30,12 @@ public class CourController {
 
     @DeleteMapping("/delete/{id}")
 
-    public void deleteCour(@PathVariable String id) {
+    public void deleteCour(@PathVariable int id) {
         courService.deleteCour(id);
     }
 
     @GetMapping("/get/{id}")
-    public Cour findById(@PathVariable String id) {
+    public Cour findById(@PathVariable int id) {
         return courService.findById(id);
     }
 }

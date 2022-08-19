@@ -11,7 +11,7 @@ public interface CourService {
 
     List<Cour> getAll();
 
-    void deleteCour(Long id);
+    void deleteCour(int id);
 
-    Cour findById(String id);
+    Cour findById(int id);
 }

@@ -17,7 +17,7 @@ import javax.persistence.Id;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document("User")
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

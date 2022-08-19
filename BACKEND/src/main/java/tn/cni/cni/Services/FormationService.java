@@ -10,10 +10,10 @@ public interface FormationService {
 
     public Formation updateFormation(Formation formation);
 
-    public void deleteFormation(Long id);
+    public void deleteFormation(int id);
 
     public List<Formation> getAll();
 
-    public Formation findById( Long id);
+    public Formation findById( int id);
 
 }
