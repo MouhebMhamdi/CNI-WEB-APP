@@ -9,6 +9,6 @@ public interface RapportService {
 	 void getRapport(Rapport rapport);
 	 List<Rapport> getallRapports();
 	 void deleteRapport(int id);
-	 Rapport updateRapport(int id);
+	 Rapport updateRapport(int id,Rapport rapport);
 
 }

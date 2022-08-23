@@ -2,6 +2,8 @@ package tn.cni.cni.Services;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,12 +29,18 @@ public class RapportServiceImpl  implements RapportService{
 	    
 	   
 		@Override
+		@Transactional
 		public void deleteRapport(int id) {
 			rapportRepository.deleteById(id);
 		}
 		@Override
-		public Rapport updateRapport(int id) {
-			return rapportRepository.findById(id).orElse(null);
+		public Rapport updateRapport(int id,Rapport rapport) {
+			Rapport r=rapportRepository.findById(id).orElse(null);
+			r.setDescription(rapport.getDescription());
+			r.setTitle(rapport.getTitle());
+			r.setSubject(rapport.getSubject());
+			return rapportRepository.save(r);
+
 			//return null;
 		} 
 }

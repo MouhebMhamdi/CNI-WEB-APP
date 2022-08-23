@@ -2,6 +2,8 @@ package tn.cni.cni.Controller;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +22,6 @@ import tn.cni.cni.Services.RapportService;
 public class RapportController {
 	@Autowired
     private RapportService rapportService;
-	@Autowired
-	private Rapport rapport;
 	
     @PostMapping("add")
     public String testadd(@RequestBody Rapport rapport){
@@ -30,22 +30,21 @@ public class RapportController {
     }
     
     @GetMapping("getAll")
-    public List<Rapport> testgetAll(@PathVariable Rapport rapport){
+    public List<Rapport> testgetAll(){
     	return rapportService.getallRapports();
     }
     
        
-    @DeleteMapping(value="/Delete")
+    @DeleteMapping(value="/Delete/{id}")
     public void testdelete(@PathVariable int id){
     	rapportService.deleteRapport(id);
     }
     
-    /*@PutMapping(value="/update/{id}")
-    public String testupdate(@RequestBody @PathVariable int id,Rapport rapport){
-    	Rapport r=rapportService.updateRapport(id);
-    	r.setName(rapport.getName());
-        return "Rapport updated";
-    }*/
+    @PutMapping(value="/update/{id}")
+    public Rapport testupdate(@PathVariable int id,@RequestBody Rapport rapport){
+    	Rapport r=rapportService.updateRapport(id,rapport);
+        return r;
+    }
     
 	    /*public List<Rapport> getAllRapports(){
 	    	return rapport.getAllRapports();
