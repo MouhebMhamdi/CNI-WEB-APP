@@ -1,8 +1,8 @@
-package tn.cni.cni.Repositories;
+package tn.cni.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import tn.cni.cni.Entities.User;
+import tn.cni.Entities.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {

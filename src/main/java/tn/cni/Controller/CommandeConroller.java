@@ -1,26 +1,21 @@
-package tn.cni.cni.Controller;
+package tn.cni.Controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import tn.cni.cni.Entities.Commande;
-import tn.cni.cni.Services.CommandeService;
+import tn.cni.Entities.Commande;
+import tn.cni.Services.ServiceInterfaces.CommandeIMPL;
 
 
 @RestController
+@RequestMapping("Commande")
 public class CommandeConroller {
 	
 	
 	@Autowired
-	private CommandeService service	;
+	private CommandeIMPL service	;
 	
 	
 	@PostMapping("/addCommande")

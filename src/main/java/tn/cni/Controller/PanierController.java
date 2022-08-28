@@ -1,25 +1,20 @@
-package tn.cni.cni.Controller;
+package tn.cni.Controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import tn.cni.cni.Entities.Panier;
-import tn.cni.cni.Services.PanierService;
+import tn.cni.Entities.Panier;
+import tn.cni.Services.ServiceInterfaces.PanierIMPL;
 
 @RestController
+@RequestMapping("Panier")
 public class PanierController {
 
 	
 	@Autowired
-	private PanierService service	;
+	private PanierIMPL service	;
 	
 	
 	@PostMapping("/addPanier")

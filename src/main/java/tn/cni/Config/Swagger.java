@@ -1,4 +1,4 @@
-package tn.cni.cni.Config;
+package tn.cni.Config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -14,7 +14,7 @@ public class Swagger {
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("tn.cni.cni.Controller"))
+                .apis(RequestHandlerSelectors.basePackage("tn.cni.Controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

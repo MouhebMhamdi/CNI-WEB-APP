@@ -1,9 +1,11 @@
-package tn.cni.cni.Repositories;
+package tn.cni.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import tn.cni.cni.Entities.Panier;
+import org.springframework.stereotype.Repository;
+import tn.cni.Entities.Panier;
 
+@Repository
 public interface PanierRepository extends JpaRepository<Panier, Integer> {
 
 	static Object getNom() {

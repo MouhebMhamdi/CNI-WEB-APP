@@ -1,9 +1,11 @@
-package tn.cni.cni.Repositories;
+package tn.cni.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import tn.cni.cni.Entities.Commande;
+import org.springframework.stereotype.Repository;
+import tn.cni.Entities.Commande;
 
+@Repository
 public interface CommandeRepository extends JpaRepository<Commande, Integer>{
 
 	static Object getNom() {
